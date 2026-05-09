@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ProcessRouteImport } from './routes/process'
 import { Route as PartnersRouteImport } from './routes/partners'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ConceptRouteImport } from './routes/concept'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -22,6 +23,11 @@ const ProcessRoute = ProcessRouteImport.update({
 const PartnersRoute = PartnersRouteImport.update({
   id: '/partners',
   path: '/partners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConceptRoute = ConceptRouteImport.update({
@@ -38,12 +44,14 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/concept': typeof ConceptRoute
+  '/contact': typeof ContactRoute
   '/partners': typeof PartnersRoute
   '/process': typeof ProcessRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/concept': typeof ConceptRoute
+  '/contact': typeof ContactRoute
   '/partners': typeof PartnersRoute
   '/process': typeof ProcessRoute
 }
@@ -51,20 +59,22 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/concept': typeof ConceptRoute
+  '/contact': typeof ContactRoute
   '/partners': typeof PartnersRoute
   '/process': typeof ProcessRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/concept' | '/partners' | '/process'
+  fullPaths: '/' | '/concept' | '/contact' | '/partners' | '/process'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/concept' | '/partners' | '/process'
-  id: '__root__' | '/' | '/concept' | '/partners' | '/process'
+  to: '/' | '/concept' | '/contact' | '/partners' | '/process'
+  id: '__root__' | '/' | '/concept' | '/contact' | '/partners' | '/process'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ConceptRoute: typeof ConceptRoute
+  ContactRoute: typeof ContactRoute
   PartnersRoute: typeof PartnersRoute
   ProcessRoute: typeof ProcessRoute
 }
@@ -83,6 +93,13 @@ declare module '@tanstack/react-router' {
       path: '/partners'
       fullPath: '/partners'
       preLoaderRoute: typeof PartnersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/concept': {
@@ -105,6 +122,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ConceptRoute: ConceptRoute,
+  ContactRoute: ContactRoute,
   PartnersRoute: PartnersRoute,
   ProcessRoute: ProcessRoute,
 }
