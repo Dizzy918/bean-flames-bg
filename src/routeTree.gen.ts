@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ProcessRouteImport } from './routes/process'
+import { Route as PartnersRouteImport } from './routes/partners'
 import { Route as ConceptRouteImport } from './routes/concept'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ProcessRoute = ProcessRouteImport.update({
   id: '/process',
   path: '/process',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnersRoute = PartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConceptRoute = ConceptRouteImport.update({
@@ -32,30 +38,34 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/concept': typeof ConceptRoute
+  '/partners': typeof PartnersRoute
   '/process': typeof ProcessRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/concept': typeof ConceptRoute
+  '/partners': typeof PartnersRoute
   '/process': typeof ProcessRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/concept': typeof ConceptRoute
+  '/partners': typeof PartnersRoute
   '/process': typeof ProcessRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/concept' | '/process'
+  fullPaths: '/' | '/concept' | '/partners' | '/process'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/concept' | '/process'
-  id: '__root__' | '/' | '/concept' | '/process'
+  to: '/' | '/concept' | '/partners' | '/process'
+  id: '__root__' | '/' | '/concept' | '/partners' | '/process'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ConceptRoute: typeof ConceptRoute
+  PartnersRoute: typeof PartnersRoute
   ProcessRoute: typeof ProcessRoute
 }
 
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/process'
       fullPath: '/process'
       preLoaderRoute: typeof ProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partners': {
+      id: '/partners'
+      path: '/partners'
+      fullPath: '/partners'
+      preLoaderRoute: typeof PartnersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/concept': {
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ConceptRoute: ConceptRoute,
+  PartnersRoute: PartnersRoute,
   ProcessRoute: ProcessRoute,
 }
 export const routeTree = rootRouteImport
