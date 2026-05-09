@@ -1,32 +1,32 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import logo from "@/assets/bean-flames-logo.png";
-import { Flame, Leaf, Truck, ShieldCheck, Phone, Mail, MapPin, Menu, X } from "lucide-react";
+import { Flame, Leaf, Recycle, Coffee, Phone, Mail, MapPin, Menu, X, Sparkles, Handshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Bean Flames — Пелети, дърва и брикети за вашия дом" },
+      { title: "Bean Flames — Пелети от кафе. Топлина без дърво." },
       {
         name: "description",
         content:
-          "Bean Flames предлага висококачествени пелети, дърва за огрев и брикети. Чиста енергия, бързa доставка в цяла България.",
+          "Bean Flames произвежда биопелети 100% от утайка от кафе. Без изсичане на гори — чиста енергия от това, което иначе отива в боклука.",
       },
-      { property: "og:title", content: "Bean Flames" },
+      { property: "og:title", content: "Bean Flames — Пелети от кафе" },
       {
         property: "og:description",
-        content: "Пелети, дърва за огрев и брикети с доставка в цяла България.",
+        content: "Биопелети 100% от утайка от кафе. Чиста енергия, нулеви отпадъци.",
       },
     ],
   }),
 });
 
 const nav = [
-  { href: "#products", label: "Продукти" },
-  { href: "#about", label: "За нас" },
-  { href: "#why", label: "Защо нас" },
+  { href: "#concept", label: "Концепцията" },
+  { href: "#how", label: "Как работи" },
+  { href: "#partners", label: "Партньорства" },
   { href: "#contact", label: "Контакти" },
 ];
 
@@ -52,7 +52,7 @@ function Index() {
               </a>
             ))}
             <Button asChild size="sm">
-              <a href="#contact">Поръчай</a>
+              <a href="#contact">Стани партньор</a>
             </Button>
           </nav>
           <button
@@ -84,41 +84,29 @@ function Index() {
       {/* Hero */}
       <section id="top" className="relative overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,oklch(0.95_0.04_85)_0%,transparent_60%)]" />
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-2 md:py-32 md:items-center">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-2 md:py-28 md:items-center">
           <div>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--flame)]" />
-              Български производител · Доставка в цялата страна
+              <Sparkles className="h-3 w-3 text-[var(--flame)]" />
+              Българска иновация · В стартов етап
             </div>
             <h1 className="text-5xl font-semibold leading-[1.05] md:text-6xl">
-              Топлина, на която
+              Пелети от кафе.
               <br />
-              <span className="text-[var(--moss)]">можеш да разчиташ.</span>
+              <span className="text-[var(--moss)]">Нито едно дърво.</span>
             </h1>
             <p className="mt-6 max-w-md text-lg text-muted-foreground">
-              Премиум пелети, дърва за огрев и брикети. Чисто горене,
-              висока калоричност и доставка до вашия дом.
+              Bean Flames превръща утайката от твоето сутрешно еспресо в чисто
+              гориво. 100% кафе, 0% дървесина — топлина, която не струва на гората нищо.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild size="lg">
-                <a href="#products">Виж продуктите</a>
+                <a href="#concept">Научи повече</a>
               </Button>
               <Button asChild size="lg" variant="outline">
-                <a href="#contact">Свържи се с нас</a>
+                <a href="#contact">Партньорство</a>
               </Button>
             </div>
-            <dl className="mt-12 grid grid-cols-3 gap-6 border-t border-border pt-8">
-              {[
-                ["12+", "години опит"],
-                ["4 800+", "доволни клиенти"],
-                ["48ч", "средна доставка"],
-              ].map(([v, l]) => (
-                <div key={l}>
-                  <dt className="font-display text-2xl text-foreground">{v}</dt>
-                  <dd className="text-xs text-muted-foreground">{l}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
           <div className="relative flex items-center justify-center">
             <div className="absolute h-72 w-72 rounded-full bg-[var(--flame)]/15 blur-3xl md:h-96 md:w-96" />
@@ -131,127 +119,117 @@ function Index() {
         </div>
       </section>
 
-      {/* Products */}
-      <section id="products" className="border-t border-border bg-card/50">
+      {/* Concept */}
+      <section id="concept" className="border-t border-border bg-card/50">
         <div className="mx-auto max-w-6xl px-6 py-24">
           <div className="mb-14 max-w-2xl">
             <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[var(--moss)]">
-              Продукти
+              Концепцията
             </p>
             <h2 className="text-4xl font-semibold md:text-5xl">
-              Гориво за всеки дом и сезон
+              Отпадъкът на едни е горивото на други.
             </h2>
+            <p className="mt-6 text-lg text-muted-foreground">
+              Всяка чаша кафе оставя след себе си утайка, която обикновено
+              отива в боклука. Ние я събираме, изсушаваме и пресоваме в
+              биопелети с висока калоричност — без свързващи вещества, без
+              дървесина, без химия.
+            </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {[
               {
-                title: "Пелети",
-                desc: "Премиум дървесни пелети клас A1 от чист бук и дъб. Висока калоричност, ниска пепел.",
-                price: "от 520 лв / тон",
-                icon: Flame,
+                title: "100% кафе",
+                desc: "Само утайка от еспресо. Без дървесни добавки, без лепила, без пълнители.",
+                icon: Coffee,
               },
               {
-                title: "Дърва за огрев",
-                desc: "Нарязани и нацепени твърди дърва — бук, дъб, габър. Сухи и готови за горене.",
-                price: "от 180 лв / куб.м",
+                title: "Нула изсичане",
+                desc: "Никое дърво не пада, за да гори твоят дом. Освобождаваме горите от енергийния товар.",
                 icon: Leaf,
               },
               {
-                title: "Брикети",
-                desc: "Пресовани дървесни брикети без добавки. Дълго и равномерно горене за камини и печки.",
-                price: "от 480 лв / тон",
-                icon: ShieldCheck,
+                title: "Кръгова икономика",
+                desc: "От кафенето до камината — суровина, която иначе би била боклук, става енергия.",
+                icon: Recycle,
               },
             ].map((p) => (
               <article
                 key={p.title}
-                className="group flex flex-col rounded-2xl border border-border bg-background p-8 transition-all hover:border-[var(--moss)]/40 hover:shadow-[var(--shadow-soft)]"
+                className="flex flex-col rounded-2xl border border-border bg-background p-8 transition-all hover:border-[var(--moss)]/40 hover:shadow-[var(--shadow-soft)]"
               >
                 <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-[var(--moss)]">
                   <p.icon className="h-6 w-6" />
                 </div>
                 <h3 className="text-2xl font-semibold">{p.title}</h3>
-                <p className="mt-3 flex-1 text-sm text-muted-foreground">{p.desc}</p>
-                <div className="mt-6 flex items-center justify-between border-t border-border pt-4">
-                  <span className="text-sm font-medium text-foreground">{p.price}</span>
-                  <a
-                    href="#contact"
-                    className="text-sm font-medium text-[var(--moss)] hover:underline"
-                  >
-                    Запитване →
-                  </a>
-                </div>
+                <p className="mt-3 text-sm text-muted-foreground">{p.desc}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* About */}
-      <section id="about" className="border-t border-border">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-2 md:items-center">
-          <div>
+      {/* How it works */}
+      <section id="how" className="border-t border-border">
+        <div className="mx-auto max-w-6xl px-6 py-24">
+          <div className="mb-14 max-w-2xl">
             <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[var(--moss)]">
-              За нас
+              Как работи
             </p>
             <h2 className="text-4xl font-semibold md:text-5xl">
-              Семеен бизнес с корени в българската гора.
+              Четири стъпки от чашата до пламъка.
             </h2>
-            <p className="mt-6 text-lg text-muted-foreground">
-              В Bean Flames вярваме, че топлината у дома започва с
-              качествена суровина. От повече от десетилетие подбираме,
-              обработваме и доставяме гориво, на което семействата могат да
-              разчитат.
-            </p>
-            <p className="mt-4 text-muted-foreground">
-              Работим директно с местни производители и поддържаме строг
-              контрол на влажност и калоричност при всяка партида.
-            </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <ol className="grid gap-6 md:grid-cols-4">
             {[
-              { icon: Leaf, t: "Устойчиво", d: "От сертифицирани български гори." },
-              { icon: ShieldCheck, t: "Качество", d: "Контрол на всеки тон." },
-              { icon: Truck, t: "Доставка", d: "До 48 часа в страната." },
-              { icon: Flame, t: "Калоричност", d: "Над 4.8 kWh/kg при пелети." },
-            ].map((f) => (
-              <div
-                key={f.t}
-                className="rounded-xl border border-border bg-card p-5"
+              ["01", "Събиране", "Партньорски кафенета и обекти оставят утайката за нас вместо в кошчето."],
+              ["02", "Сушене", "Контролирано изсушаване, което запазва енергийната стойност на кафето."],
+              ["03", "Пресоване", "Високо налягане формира плътни пелети — без свързващи вещества."],
+              ["04", "Горене", "Чиста, ароматна топлина за камини, печки и индустриални горелки."],
+            ].map(([n, t, d]) => (
+              <li
+                key={n}
+                className="rounded-2xl border border-border bg-card p-6"
               >
-                <f.icon className="h-5 w-5 text-[var(--flame)]" />
-                <h3 className="mt-3 text-base font-semibold">{f.t}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{f.d}</p>
-              </div>
+                <div className="font-display text-3xl text-[var(--flame)]">{n}</div>
+                <h3 className="mt-3 text-lg font-semibold">{t}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{d}</p>
+              </li>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
-      {/* Why */}
+      {/* Partners */}
       <section
-        id="why"
+        id="partners"
         className="border-t border-border bg-[var(--bark)] text-[oklch(0.97_0.015_85)]"
       >
         <div className="mx-auto max-w-6xl px-6 py-24">
           <div className="grid gap-10 md:grid-cols-3">
             <div className="md:col-span-1">
               <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[oklch(0.85_0.08_95)]">
-                Защо Bean Flames
+                Партньорства
               </p>
               <h2 className="text-4xl font-semibold">
-                Просто. Чисто. Топло.
+                Изграждаме мрежа, чаша по чаша.
               </h2>
+              <p className="mt-6 text-[oklch(0.88_0.02_85)]">
+                Bean Flames е в стартов етап. Работим директно с първите си
+                партньори — кафенета, вериги и производители — за да докажем
+                концепцията на българския пазар.
+              </p>
             </div>
             <ul className="grid gap-6 md:col-span-2 sm:grid-cols-2">
               {[
-                ["Прозрачни цени", "Без скрити такси, ясни оферти за всяко количество."],
-                ["Лична грижа", "Консултант, който познава нуждите на твоя дом."],
-                ["Бързи доставки", "Собствен транспорт до всяка точка в България."],
-                ["Гаранция за качество", "Връщане при несъответствие — без въпроси."],
+                ["Кафенета и ресторанти", "Предаваш ни утайката безплатно — ние осигуряваме контейнерите и логистиката."],
+                ["Офиси и вериги", "Корпоративно решение за намаляване на отпадъците от кафе машини."],
+                ["Производители", "Технологично сътрудничество около пресоване и сертификация."],
+                ["Ранни тестери", "Търсим обекти, готови да изпробват първите партиди гориво."],
               ].map(([t, d]) => (
                 <li key={t} className="border-l-2 border-[var(--flame)] pl-5">
-                  <h3 className="text-lg font-semibold">{t}</h3>
+                  <Handshake className="h-5 w-5 text-[var(--flame)]" />
+                  <h3 className="mt-3 text-lg font-semibold">{t}</h3>
                   <p className="mt-1 text-sm text-[oklch(0.85_0.02_85)]">{d}</p>
                 </li>
               ))}
@@ -265,13 +243,14 @@ function Index() {
         <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-2">
           <div>
             <p className="mb-3 text-sm font-medium uppercase tracking-widest text-[var(--moss)]">
-              Контакти
+              Свържи се
             </p>
             <h2 className="text-4xl font-semibold md:text-5xl">
-              Готови сме да отопляваме твоя дом.
+              Имаш кафе. Ние имаме идея.
             </h2>
             <p className="mt-6 text-muted-foreground">
-              Обади се или ни пиши — ще ти изпратим оферта в рамките на работния ден.
+              Ако управляваш кафене, верига или просто искаш да научиш повече —
+              пиши ни. Отговаряме лично на всяко запитване.
             </p>
             <ul className="mt-10 space-y-5">
               <li className="flex items-start gap-4">
@@ -287,16 +266,16 @@ function Index() {
                 <Mail className="mt-1 h-5 w-5 text-[var(--flame)]" />
                 <div>
                   <div className="text-sm text-muted-foreground">Имейл</div>
-                  <a href="mailto:info@beanflames.bg" className="font-medium hover:underline">
-                    info@beanflames.bg
+                  <a href="mailto:hello@beanflames.bg" className="font-medium hover:underline">
+                    hello@beanflames.bg
                   </a>
                 </div>
               </li>
               <li className="flex items-start gap-4">
                 <MapPin className="mt-1 h-5 w-5 text-[var(--flame)]" />
                 <div>
-                  <div className="text-sm text-muted-foreground">Склад</div>
-                  <div className="font-medium">гр. София, ул. Горска 12</div>
+                  <div className="text-sm text-muted-foreground">База</div>
+                  <div className="font-medium">София, България</div>
                 </div>
               </li>
             </ul>
@@ -304,14 +283,17 @@ function Index() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              window.location.href = "mailto:info@beanflames.bg";
+              window.location.href = "mailto:hello@beanflames.bg";
             }}
             className="rounded-2xl border border-border bg-card p-8"
           >
-            <h3 className="text-xl font-semibold">Заяви оферта</h3>
+            <h3 className="text-xl font-semibold">Заяви партньорство</h3>
+            <p className="mt-1 text-sm text-muted-foreground">
+              Кажи ни накратко за обекта си — ще се свържем в рамките на 48 часа.
+            </p>
             <div className="mt-6 grid gap-4">
               <label className="grid gap-1.5 text-sm">
-                <span className="font-medium">Име</span>
+                <span className="font-medium">Име / Обект</span>
                 <input
                   required
                   className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
@@ -325,15 +307,15 @@ function Index() {
                 />
               </label>
               <label className="grid gap-1.5 text-sm">
-                <span className="font-medium">Запитване</span>
+                <span className="font-medium">Съобщение</span>
                 <textarea
                   rows={4}
                   className="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring"
-                  placeholder="Например: 2 тона пелети с доставка до Пловдив"
+                  placeholder="Напр.: имаме кафене в центъра на София и около 15 кг утайка дневно."
                 />
               </label>
               <Button type="submit" size="lg" className="mt-2">
-                Изпрати запитване
+                Изпрати
               </Button>
             </div>
           </form>
@@ -347,7 +329,7 @@ function Index() {
             <img src={logo} alt="" className="h-8 w-auto" />
           </div>
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Bean Flames. Всички права запазени.
+            © {new Date().getFullYear()} Bean Flames. Топлина от кафе.
           </p>
         </div>
       </footer>
