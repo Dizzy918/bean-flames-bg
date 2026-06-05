@@ -40,8 +40,8 @@ function ContactPage() {
               {
                 icon: Mail,
                 label: "Имейл",
-                value: "hello@beanflames.bg",
-                href: "mailto:hello@beanflames.bg",
+                value: "beanflames@beanflames.online",
+                href: "mailto:beanflames@beanflames.online",
               },
               {
                 icon: Phone,
@@ -90,7 +90,7 @@ function ContactPage() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              window.location.href = "mailto:hello@beanflames.bg";
+              window.location.href = "mailto:beanflames@beanflames.online";
             }}
             className="md:col-span-3 rounded-3xl border border-border bg-card p-8 md:p-10"
           >

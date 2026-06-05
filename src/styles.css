@@ -176,4 +176,31 @@
     to { transform: translateX(-50%); }
   }
   .animate-ticker { animation: ticker 30s linear infinite; }
+  /* Smooth link transitions */
+  a { transition: color 0.2s ease; }
+
+  /* Card lift on hover */
+  .card-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px -8px oklch(0 0 0 / 0.3);
+  }
+
+  /* Shimmer effect for feature highlights */
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      oklch(1 0 0 / 0) 0%,
+      oklch(1 0 0 / 0.06) 50%,
+      oklch(1 0 0 / 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
 }
