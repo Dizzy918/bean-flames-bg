@@ -73,14 +73,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Bean Flames — Пелети от кафе" },
+      { name: "description", content: "Bean Flames произвежда биопелети от утайка от кафе. Чиста енергия, кръгова икономика, нулеви отпадъци." },
+      { name: "author", content: "Bean Flames" },
+      { property: "og:title", content: "Bean Flames — Пелети от кафе" },
+      { property: "og:description", content: "Биопелети от утайка от кафе. Кръгова икономика, нулеви отпадъци." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:site", content: "@BeanFlames" },
     ],
     links: [
       {

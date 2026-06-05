@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import logo from "@/assets/bean-flames-logo.png";
+import pelletsImg from "@/assets/pellets-fireplace.jpg";
 import { ArrowRight, Coffee, Flame, Recycle, Sparkles } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -90,15 +90,24 @@ function Index() {
             </dl>
           </div>
 
-          {/* Logo art */}
+          {/* Product showcase */}
           <div className="relative md:col-span-5">
-            <div className="absolute inset-0 -z-10 rounded-[3rem] bg-gradient-to-br from-[var(--flame)]/10 via-transparent to-[var(--moss)]/10 blur-2xl" />
-            <div className="relative animate-float">
+            <div className="absolute -inset-6 -z-10 rounded-[3rem] bg-gradient-to-br from-[var(--flame)]/15 via-transparent to-[var(--moss)]/10 blur-3xl" />
+            <div className="relative overflow-hidden rounded-3xl border border-border/60 shadow-2xl">
               <img
-                src={logo}
-                alt=""
-                className="w-full max-w-md drop-shadow-[0_30px_60px_oklch(0.7_0.18_45/0.4)]"
+                src={pelletsImg}
+                alt="Кафе пелети Bean Flames"
+                className="w-full object-cover aspect-[4/5] md:aspect-[3/4]"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-3 py-1 backdrop-blur-sm">
+                  <Sparkles className="h-3 w-3 text-[var(--flame)]" />
+                  <span className="mono text-[10px] uppercase tracking-widest text-muted-foreground">
+                    eco-friendly · sustainable
+                  </span>
+                </div>
+              </div>
             </div>
             {/* corner ticks */}
             <div className="pointer-events-none absolute -inset-4 hidden md:block">
