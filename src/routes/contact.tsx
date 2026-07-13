@@ -67,7 +67,10 @@ function ContactPage() {
                     {c.label}
                   </div>
                   {c.href ? (
-                    <a href={c.href} className="mt-1 block text-lg font-medium hover:text-[var(--flame)]">
+                    <a
+                      href={c.href}
+                      className="mt-1 block text-lg font-medium hover:text-[var(--flame)]"
+                    >
                       {c.value}
                     </a>
                   ) : (
@@ -78,11 +81,22 @@ function ContactPage() {
             ))}
 
             <div className="rounded-2xl border border-border bg-gradient-to-br from-[var(--bean)]/30 to-card p-6">
-              <div className="mono text-xs uppercase tracking-widest text-[var(--flame)]">─── работно време</div>
+              <div className="mono text-xs uppercase tracking-widest text-[var(--flame)]">
+                ─── работно време
+              </div>
               <ul className="mt-4 space-y-1 text-sm">
-                <li className="flex justify-between"><span>Понеделник — Петък</span><span className="mono text-muted-foreground">09:00 — 18:00</span></li>
-                <li className="flex justify-between"><span>Събота</span><span className="mono text-muted-foreground">10:00 — 14:00</span></li>
-                <li className="flex justify-between"><span>Неделя</span><span className="mono text-muted-foreground">почивен</span></li>
+                <li className="flex justify-between">
+                  <span>Понеделник — Петък</span>
+                  <span className="mono text-muted-foreground">09:00 — 18:00</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Събота</span>
+                  <span className="mono text-muted-foreground">10:00 — 14:00</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Неделя</span>
+                  <span className="mono text-muted-foreground">почивен</span>
+                </li>
               </ul>
             </div>
           </div>
@@ -90,11 +104,25 @@ function ContactPage() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              window.location.href = "mailto:beanflames@beanflames.online";
+              const data = new FormData(e.currentTarget);
+              const get = (key: string) => (data.get(key) as string | null)?.trim() || "";
+              const subject = `Запитване от ${get("name")}${get("company") ? ` — ${get("company")}` : ""}`;
+              const body = [
+                `Име: ${get("name")}`,
+                `Обект / Компания: ${get("company") || "—"}`,
+                `Имейл: ${get("email")}`,
+                `Телефон: ${get("phone") || "—"}`,
+                `Аз съм: ${get("type")}`,
+                "",
+                get("message"),
+              ].join("\n");
+              window.location.href = `mailto:beanflames@beanflames.online?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             }}
             className="md:col-span-3 rounded-3xl border border-border bg-card p-8 md:p-10"
           >
-            <div className="mono text-xs uppercase tracking-widest text-[var(--flame)]">─── формуляр</div>
+            <div className="mono text-xs uppercase tracking-widest text-[var(--flame)]">
+              ─── формуляр
+            </div>
             <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Заяви разговор</h2>
             <p className="mt-2 text-sm text-muted-foreground">
               Кажи ни накратко за обекта си и какво те интересува.
@@ -102,19 +130,22 @@ function ContactPage() {
 
             <div className="mt-8 grid gap-4">
               <div className="grid gap-4 md:grid-cols-2">
-                <Field label="Име" />
-                <Field label="Обект / Компания" required={false} />
+                <Field label="Име" name="name" />
+                <Field label="Обект / Компания" name="company" required={false} />
               </div>
               <div className="grid gap-4 md:grid-cols-2">
-                <Field label="Имейл" type="email" />
-                <Field label="Телефон" type="tel" required={false} />
+                <Field label="Имейл" name="email" type="email" />
+                <Field label="Телефон" name="phone" type="tel" required={false} />
               </div>
 
               <label className="grid gap-2 text-sm">
                 <span className="mono text-xs uppercase tracking-widest text-muted-foreground">
                   Аз съм…
                 </span>
-                <select className="rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:border-[var(--flame)] focus:ring-1 focus:ring-[var(--flame)]">
+                <select
+                  name="type"
+                  className="rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:border-[var(--flame)] focus:ring-1 focus:ring-[var(--flame)]"
+                >
                   <option>Кафене / ресторант</option>
                   <option>Офис / верига</option>
                   <option>Производител</option>
@@ -128,6 +159,7 @@ function ContactPage() {
                   Съобщение
                 </span>
                 <textarea
+                  name="message"
                   rows={5}
                   required
                   className="rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:border-[var(--flame)] focus:ring-1 focus:ring-[var(--flame)]"
@@ -151,10 +183,12 @@ function ContactPage() {
 
 function Field({
   label,
+  name,
   type = "text",
   required = true,
 }: {
   label: string;
+  name: string;
   type?: string;
   required?: boolean;
 }) {
@@ -165,6 +199,7 @@ function Field({
       </span>
       <input
         type={type}
+        name={name}
         required={required}
         className="rounded-lg border border-input bg-background px-3 py-2.5 text-sm outline-none focus:border-[var(--flame)] focus:ring-1 focus:ring-[var(--flame)]"
       />
