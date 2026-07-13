@@ -27,13 +27,13 @@ function Index() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 grid-bg opacity-30" />
-        <div
-          className="absolute inset-0 -z-10"
-          style={{ background: "var(--gradient-hero)" }}
-        />
+        <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} />
         {/* glow orbs */}
         <div className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-[var(--flame)]/30 blur-[120px] animate-pulse-glow" />
-        <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[var(--moss)]/25 blur-[120px] animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
+        <div
+          className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-[var(--moss)]/25 blur-[120px] animate-pulse-glow"
+          style={{ animationDelay: "1.5s" }}
+        />
 
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 pt-20 pb-32 md:grid-cols-12 md:gap-8 md:pt-28 md:pb-40 md:items-center">
           <div className="md:col-span-7">
@@ -45,16 +45,16 @@ function Index() {
             </div>
 
             <h1 className="mt-8 text-6xl font-semibold leading-[0.95] tracking-tight md:text-8xl">
-              Гори{" "}
-              <span className="text-glow-flame text-[var(--flame)]">кафе</span>,
+              Гори <span className="text-glow-flame text-[var(--flame)]">кафе</span>,
               <br />
               <span className="text-muted-foreground">не</span>{" "}
               <span className="text-glow-moss text-[var(--moss)]">гори</span>.
             </h1>
 
             <p className="mt-8 max-w-xl text-lg text-muted-foreground md:text-xl">
-              Bean Flames превръща утайката от твоето сутрешно еспресо в
-              чисто гориво. <span className="text-foreground">100% кафе. 0% дървесина.</span> Топлина, която не струва на природата нищо.
+              Bean Flames превръща утайката от твоето сутрешно еспресо в чисто гориво.{" "}
+              <span className="text-foreground">100% кафе. 0% дървесина.</span> Топлина, която не
+              струва на природата нищо.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -111,7 +111,12 @@ function Index() {
             </div>
             {/* corner ticks */}
             <div className="pointer-events-none absolute -inset-4 hidden md:block">
-              {["top-0 left-0", "top-0 right-0 rotate-90", "bottom-0 right-0 rotate-180", "bottom-0 left-0 -rotate-90"].map((p) => (
+              {[
+                "top-0 left-0",
+                "top-0 right-0 rotate-90",
+                "bottom-0 right-0 rotate-180",
+                "bottom-0 left-0 -rotate-90",
+              ].map((p) => (
                 <div key={p} className={`absolute ${p}`}>
                   <div className="h-4 w-px bg-[var(--flame)]" />
                   <div className="h-px w-4 bg-[var(--flame)]" />
@@ -126,7 +131,14 @@ function Index() {
           <div className="flex animate-ticker whitespace-nowrap gap-12 mono text-sm text-muted-foreground">
             {Array.from({ length: 2 }).map((_, i) => (
               <div key={i} className="flex shrink-0 items-center gap-12">
-                {["coffee → energy", "zero waste", "no trees harmed", "circular by design", "made in bulgaria", "proof of concept"].map((t) => (
+                {[
+                  "coffee → energy",
+                  "zero waste",
+                  "no trees harmed",
+                  "circular by design",
+                  "made in bulgaria",
+                  "proof of concept",
+                ].map((t) => (
                   <span key={t} className="flex items-center gap-12">
                     <span className="text-[var(--flame)]">●</span>
                     <span>{t.toUpperCase()}</span>
@@ -202,8 +214,8 @@ function Index() {
                 <span className="text-muted-foreground">Имаш и суровина за нас.</span>
               </h2>
               <p className="mt-6 max-w-xl text-lg text-muted-foreground">
-                Търсим първите си партньори в София. Поемаме логистиката,
-                ти освобождаваш един кош на ден.
+                Търсим първите си партньори в София. Поемаме логистиката, ти освобождаваш един кош
+                на ден.
               </p>
               <div className="mt-10 flex flex-wrap gap-3">
                 <Link

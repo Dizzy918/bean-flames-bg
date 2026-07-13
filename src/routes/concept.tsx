@@ -13,7 +13,10 @@ export const Route = createFileRoute("/concept")({
           "Защо пелети от кафе? Запознайте се с идеята зад Bean Flames — кръгова икономика, която превръща отпадък в енергия.",
       },
       { property: "og:title", content: "Концепцията — Bean Flames" },
-      { property: "og:description", content: "Кръгова икономика, която превръща утайка от кафе в енергия." },
+      {
+        property: "og:description",
+        content: "Кръгова икономика, която превръща утайка от кафе в енергия.",
+      },
     ],
   }),
 });
@@ -55,7 +58,9 @@ function ConceptPage() {
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-6 py-24">
           <div className="mb-12 max-w-2xl">
-            <div className="mono text-xs uppercase tracking-widest text-[var(--flame)]">─── сравнение</div>
+            <div className="mono text-xs uppercase tracking-widest text-[var(--flame)]">
+              ─── сравнение
+            </div>
             <h2 className="mt-6 text-4xl font-semibold md:text-5xl">
               Класическите пелети vs. Bean Flames
             </h2>
@@ -65,7 +70,9 @@ function ConceptPage() {
             <div className="rounded-2xl border border-border bg-card p-8 opacity-80">
               <div className="flex items-center gap-3">
                 <TreePine className="h-6 w-6 text-muted-foreground" />
-                <span className="mono text-xs uppercase tracking-widest text-muted-foreground">конвенционални</span>
+                <span className="mono text-xs uppercase tracking-widest text-muted-foreground">
+                  конвенционални
+                </span>
               </div>
               <h3 className="mt-6 text-2xl font-semibold">Дървесни пелети</h3>
               <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
@@ -81,7 +88,9 @@ function ConceptPage() {
               <div className="relative">
                 <div className="flex items-center gap-3">
                   <Zap className="h-6 w-6 text-[var(--flame)]" />
-                  <span className="mono text-xs uppercase tracking-widest text-[var(--flame)]">bean flames</span>
+                  <span className="mono text-xs uppercase tracking-widest text-[var(--flame)]">
+                    bean flames
+                  </span>
                 </div>
                 <h3 className="mt-6 text-2xl font-semibold">Кафе пелети</h3>
                 <ul className="mt-6 space-y-3 text-sm">
@@ -100,14 +109,16 @@ function ConceptPage() {
       <section className="border-b border-border">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-2 md:items-center">
           <div>
-            <div className="mono text-xs uppercase tracking-widest text-[var(--moss)]">─── защо кафе</div>
+            <div className="mono text-xs uppercase tracking-widest text-[var(--moss)]">
+              ─── защо кафе
+            </div>
             <h2 className="mt-6 text-4xl font-semibold md:text-5xl">
               Зърното, което вече е дало всичко… освен топлина.
             </h2>
             <p className="mt-6 text-lg text-muted-foreground">
-              Утайката от кафе съдържа естествени масла и целулоза с висока
-              енергийна стойност. След правилно сушене и пресоване, тя гори
-              чисто и продължително — без добавени химикали, без свързващи вещества.
+              Утайката от кафе съдържа естествени масла и целулоза с висока енергийна стойност. След
+              правилно сушене и пресоване, тя гори чисто и продължително — без добавени химикали,
+              без свързващи вещества.
             </p>
             <Link
               to="/process"
@@ -123,7 +134,9 @@ function ConceptPage() {
               <Recycle className="h-48 w-48 text-[var(--moss)]/30 animate-[spin_30s_linear_infinite]" />
             </div>
             <div className="relative flex h-full flex-col justify-end">
-              <div className="mono text-xs uppercase tracking-widest text-muted-foreground">closed loop</div>
+              <div className="mono text-xs uppercase tracking-widest text-muted-foreground">
+                closed loop
+              </div>
               <div className="mt-2 font-display text-3xl">
                 Кафене → Утайка → Пелет → Топлина → Пепел → Почва
               </div>

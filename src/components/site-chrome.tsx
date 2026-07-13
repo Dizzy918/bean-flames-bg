@@ -20,7 +20,11 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-2 group">
-          <img src={logo} alt="Bean Flames" className="h-9 w-auto transition-transform group-hover:scale-105" />
+          <img
+            src={logo}
+            alt="Bean Flames"
+            className="h-9 w-auto transition-transform group-hover:scale-105"
+          />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -31,14 +35,10 @@ export function SiteHeader() {
                 key={l.to}
                 to={l.to}
                 className={`relative rounded-full px-4 py-2 text-sm transition-colors ${
-                  active
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
+                  active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                {active && (
-                  <span className="absolute inset-0 rounded-full bg-secondary" />
-                )}
+                {active && <span className="absolute inset-0 rounded-full bg-secondary" />}
                 <span className="relative">{l.label}</span>
               </Link>
             );
@@ -100,7 +100,15 @@ export function SiteFooter() {
               className="flex h-9 w-9 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-all hover:bg-[var(--flame)]/15 hover:text-[var(--flame)]"
               aria-label="Instagram"
             >
-              <svg className="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                className="h-4.5 w-4.5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
                 <circle cx="12" cy="12" r="5" />
                 <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
@@ -124,7 +132,15 @@ export function SiteFooter() {
               className="flex h-9 w-9 items-center justify-center rounded-lg bg-secondary text-muted-foreground transition-all hover:bg-[var(--moss)]/15 hover:text-[var(--moss)]"
               aria-label="Уебсайт"
             >
-              <svg className="h-4.5 w-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                className="h-4.5 w-4.5"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <circle cx="12" cy="12" r="10" />
                 <path d="M2 12h20" />
                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
@@ -136,11 +152,16 @@ export function SiteFooter() {
           </p>
         </div>
         <div>
-          <h4 className="mono text-xs uppercase tracking-widest text-muted-foreground">Навигация</h4>
+          <h4 className="mono text-xs uppercase tracking-widest text-muted-foreground">
+            Навигация
+          </h4>
           <ul className="mt-4 space-y-2 text-sm">
             {links.map((l) => (
               <li key={l.to}>
-                <Link to={l.to} className="text-foreground/80 hover:text-[var(--flame)] transition-colors">
+                <Link
+                  to={l.to}
+                  className="text-foreground/80 hover:text-[var(--flame)] transition-colors"
+                >
                   {l.label}
                 </Link>
               </li>
@@ -150,29 +171,83 @@ export function SiteFooter() {
         <div>
           <h4 className="mono text-xs uppercase tracking-widest text-muted-foreground">Контакт</h4>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><a href="mailto:beanflames@beanflames.online" className="hover:text-[var(--flame)] transition-colors">beanflames@beanflames.online</a></li>
-            <li><a href="tel:+359888000000" className="hover:text-[var(--flame)] transition-colors">+359 888 000 000</a></li>
+            <li>
+              <a
+                href="mailto:beanflames@beanflames.online"
+                className="hover:text-[var(--flame)] transition-colors"
+              >
+                beanflames@beanflames.online
+              </a>
+            </li>
+            <li>
+              <a href="tel:+359888000000" className="hover:text-[var(--flame)] transition-colors">
+                +359 888 000 000
+              </a>
+            </li>
             <li className="text-muted-foreground">София, България</li>
           </ul>
         </div>
         <div>
-          <h4 className="mono text-xs uppercase tracking-widest text-muted-foreground">Социални мрежи</h4>
+          <h4 className="mono text-xs uppercase tracking-widest text-muted-foreground">
+            Социални мрежи
+          </h4>
           <ul className="mt-4 space-y-2 text-sm">
             <li>
-              <a href="https://www.instagram.com/beanflames" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/80 hover:text-[var(--flame)] transition-colors">
-                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><circle cx="12" cy="12" r="5" /><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" /></svg>
+              <a
+                href="https://www.instagram.com/beanflames"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-foreground/80 hover:text-[var(--flame)] transition-colors"
+              >
+                <svg
+                  className="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="5" />
+                  <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+                </svg>
                 @beanflames
               </a>
             </li>
             <li>
-              <a href="https://www.facebook.com/BeanFlames" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/80 hover:text-[var(--flame)] transition-colors">
-                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+              <a
+                href="https://www.facebook.com/BeanFlames"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-foreground/80 hover:text-[var(--flame)] transition-colors"
+              >
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
                 Bean Flames
               </a>
             </li>
             <li>
-              <a href="https://beanflames.online" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-foreground/80 hover:text-[var(--moss)] transition-colors">
-                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M2 12h20" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
+              <a
+                href="https://beanflames.online"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-foreground/80 hover:text-[var(--moss)] transition-colors"
+              >
+                <svg
+                  className="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M2 12h20" />
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
                 beanflames.online
               </a>
             </li>
@@ -188,4 +263,3 @@ export function SiteFooter() {
     </footer>
   );
 }
-

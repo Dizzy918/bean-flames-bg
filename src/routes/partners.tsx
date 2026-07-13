@@ -26,8 +26,7 @@ export const Route = createFileRoute("/partners")({
       { property: "og:title", content: "Партньори — Bean Flames" },
       {
         property: "og:description",
-        content:
-          "Кафенета, вериги, производители, ранни тестери — стани част от мрежата.",
+        content: "Кафенета, вериги, производители, ранни тестери — стани част от мрежата.",
       },
     ],
   }),
@@ -77,11 +76,7 @@ const tracks = [
     tag: "Track 01",
     title: "Кафенета и ресторанти",
     desc: "Ти ни даваш утайката, ние даваме контейнерите и логистиката. Без разходи, без главоболия.",
-    perks: [
-      "Безплатно вдигане",
-      "Сертификат за устойчивост",
-      "Промо материали за обекта",
-    ],
+    perks: ["Безплатно вдигане", "Сертификат за устойчивост", "Промо материали за обекта"],
   },
   {
     icon: Building2,
@@ -102,11 +97,7 @@ const tracks = [
     tag: "Track 04",
     title: "Ранни тестери",
     desc: "Камини, пелетни печки, котелни — търсим обекти, готови да изпробват първите ни партиди.",
-    perks: [
-      "Безплатни мостри",
-      "Директна обратна връзка",
-      "Влияние върху продукта",
-    ],
+    perks: ["Безплатни мостри", "Директна обратна връзка", "Влияние върху продукта"],
   },
 ];
 
@@ -119,9 +110,7 @@ function PartnersPage() {
           <>
             Изграждаме мрежа,
             <br />
-            <span className="text-[var(--flame)] text-glow-flame">
-              чаша по чаша.
-            </span>
+            <span className="text-[var(--flame)] text-glow-flame">чаша по чаша.</span>
           </>
         }
         subtitle="Bean Flames вече има 5 стратегически партньорства. Заедно изграждаме кръговата икономика на кафето в България."
@@ -134,12 +123,10 @@ function PartnersPage() {
             <div className="mono text-xs uppercase tracking-widest text-[var(--flame)]">
               ─── създадени партньорства
             </div>
-            <h2 className="mt-6 text-4xl font-semibold md:text-5xl">
-              Кой стои зад нас?
-            </h2>
+            <h2 className="mt-6 text-4xl font-semibold md:text-5xl">Кой стои зад нас?</h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Пет компании, които споделят визията ни за устойчиво бъдеще —
-              от кафе суровината до крайния пелет.
+              Пет компании, които споделят визията ни за устойчиво бъдеще — от кафе суровината до
+              крайния пелет.
             </p>
           </div>
 
@@ -156,22 +143,15 @@ function PartnersPage() {
                 />
                 <div className="relative">
                   <div className="flex items-center justify-between">
-                    <div
-                      className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary"
-                    >
-                      <p.icon
-                        className="h-6 w-6"
-                        style={{ color: p.color }}
-                      />
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary">
+                      <p.icon className="h-6 w-6" style={{ color: p.color }} />
                     </div>
                     <span className="mono text-xs uppercase tracking-widest text-muted-foreground">
                       {p.category}
                     </span>
                   </div>
                   <h3 className="mt-8 text-2xl font-semibold">{p.name}</h3>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                    {p.desc}
-                  </p>
+                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
                 </div>
                 {/* watermark number */}
                 <div className="mono absolute bottom-6 right-6 text-3xl text-foreground/5 font-display">
@@ -187,12 +167,10 @@ function PartnersPage() {
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--flame)]/10">
                     <Handshake className="h-6 w-6 text-[var(--flame)]" />
                   </div>
-                  <h3 className="mt-8 text-2xl font-semibold">
-                    Стани партньор
-                  </h3>
+                  <h3 className="mt-8 text-2xl font-semibold">Стани партньор</h3>
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                    Имаш кафене, фабрика или идея? Търсим следващия партньор,
-                    който ще допълни веригата.
+                    Имаш кафене, фабрика или идея? Търсим следващия партньор, който ще допълни
+                    веригата.
                   </p>
                 </div>
                 <Link
@@ -214,12 +192,9 @@ function PartnersPage() {
             <div className="mono text-xs uppercase tracking-widest text-[var(--moss)]">
               ─── партньорски модели
             </div>
-            <h2 className="mt-6 text-4xl font-semibold md:text-5xl">
-              Как работим заедно?
-            </h2>
+            <h2 className="mt-6 text-4xl font-semibold md:text-5xl">Как работим заедно?</h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              Четири пътеки за различни типове партньори — от кафенета до
-              индустриални тестери.
+              Четири пътеки за различни типове партньори — от кафенета до индустриални тестери.
             </p>
           </div>
 
@@ -243,10 +218,7 @@ function PartnersPage() {
                   <p className="mt-3 text-muted-foreground">{t.desc}</p>
                   <ul className="mt-6 grid gap-2">
                     {t.perks.map((p) => (
-                      <li
-                        key={p}
-                        className="mono text-xs text-muted-foreground"
-                      >
+                      <li key={p} className="mono text-xs text-muted-foreground">
                         ✓ {p}
                       </li>
                     ))}
@@ -274,21 +246,17 @@ function PartnersPage() {
                 <h2 className="mt-6 text-4xl font-semibold leading-tight md:text-5xl">
                   5 партньора.
                   <br />
-                  <span className="text-muted-foreground">
-                    Една обща мисия.
-                  </span>
+                  <span className="text-muted-foreground">Една обща мисия.</span>
                 </h2>
                 <p className="mt-6 text-lg text-muted-foreground">
-                  От specialty кафето на Dabov, през логистиката на MW
-                  Logistica, до пелетното производство на Pelletissimo — всяко
-                  звено е на място.
+                  От specialty кафето на Dabov, през логистиката на MW Logistica, до пелетното
+                  производство на Pelletissimo — всяко звено е на място.
                 </p>
                 <Link
                   to="/contact"
                   className="mt-8 inline-flex items-center gap-2 rounded-full bg-[var(--flame)] px-6 py-3 text-sm font-semibold text-background hover:bg-[var(--flame)]/90 transition-colors"
                 >
-                  Стани следващият партньор{" "}
-                  <ArrowRight className="h-4 w-4" />
+                  Стани следващият партньор <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
               <div className="grid grid-cols-2 gap-4">
@@ -298,13 +266,8 @@ function PartnersPage() {
                   ["50 кг", "цел / месец"],
                   ["2026", "пилотен старт"],
                 ].map(([v, l]) => (
-                  <div
-                    key={l}
-                    className="rounded-2xl border border-border bg-background/50 p-6"
-                  >
-                    <div className="font-display text-4xl text-foreground">
-                      {v}
-                    </div>
+                  <div key={l} className="rounded-2xl border border-border bg-background/50 p-6">
+                    <div className="font-display text-4xl text-foreground">{v}</div>
                     <div className="mono mt-2 text-[10px] uppercase tracking-widest text-muted-foreground">
                       {l}
                     </div>

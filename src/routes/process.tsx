@@ -75,7 +75,9 @@ function ProcessPage() {
                 <div className="relative pl-16 md:pl-0 md:pr-12 md:text-right">
                   {i % 2 === 0 ? (
                     <div className="md:text-right">
-                      <div className="font-display text-7xl text-[var(--flame)]/30 md:text-8xl">{s.n}</div>
+                      <div className="font-display text-7xl text-[var(--flame)]/30 md:text-8xl">
+                        {s.n}
+                      </div>
                       <h3 className="mt-2 text-3xl font-semibold md:text-4xl">{s.title}</h3>
                       <p className="mt-4 text-muted-foreground">{s.body}</p>
                     </div>
@@ -108,7 +110,9 @@ function ProcessPage() {
                     </ul>
                   ) : (
                     <div>
-                      <div className="font-display text-7xl text-[var(--moss)]/30 md:text-8xl">{s.n}</div>
+                      <div className="font-display text-7xl text-[var(--moss)]/30 md:text-8xl">
+                        {s.n}
+                      </div>
                       <h3 className="mt-2 text-3xl font-semibold md:text-4xl">{s.title}</h3>
                       <p className="mt-4 text-muted-foreground">{s.body}</p>
                     </div>
@@ -125,8 +129,12 @@ function ProcessPage() {
           <div className="rounded-3xl border border-border bg-card p-10 md:p-16">
             <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <div>
-                <div className="mono text-xs uppercase tracking-widest text-[var(--flame)]">─── интересно ти е?</div>
-                <h2 className="mt-4 text-3xl font-semibold md:text-4xl">Да поговорим за партньорство.</h2>
+                <div className="mono text-xs uppercase tracking-widest text-[var(--flame)]">
+                  ─── интересно ти е?
+                </div>
+                <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+                  Да поговорим за партньорство.
+                </h2>
               </div>
               <Link
                 to="/contact"

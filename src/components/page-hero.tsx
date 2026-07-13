@@ -27,9 +27,7 @@ export function PageHero({
           {title}
         </h1>
         {subtitle && (
-          <p className="mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-            {subtitle}
-          </p>
+          <p className="mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">{subtitle}</p>
         )}
       </div>
     </section>
